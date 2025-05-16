@@ -10,19 +10,25 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative h-screen overflow-hidden">
+      {/* Background Image and Overlay */}
       <div
-        className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
-        }}
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: "url('/1.jpg')" }}
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>
 
-      <div className="container mx-auto px-4 z-10 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }}>
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Turizmi i Qëndrueshëm</h1>
+      {/* Main Content */}
+      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Turizmi i Qëndrueshëm
+          </h1>
           <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto mb-8">
             Zbuloni praktikat më të mira të turizmit të qëndrueshëm nga e gjithë bota
           </p>
@@ -34,6 +40,7 @@ export default function Hero() {
           </Button>
         </motion.div>
 
+        {/* Scroll Down Icon */}
         <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
